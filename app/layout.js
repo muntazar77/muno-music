@@ -1,6 +1,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import Header from "@/components/Header";
+import Sidebar from "@/components/sidebar";
+import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -11,7 +13,34 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+
+      <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+        <Header />   
+
+        <div className="">
+        <div className="border-t">
+          <div className="bg-background">
+            <div className="grid lg:grid-cols-5 sm:grid-cols-2">
+              <Sidebar  className="hidden lg:block" />
+              {/* make it responsive */}
+              <div className="lg:col-span-4 sm:col-span-2">
+                <div className="h-full px-4 py-6 lg:px-8">
+                {children} 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </ThemeProvider>
+
+        </body>
     </html>
   );
 }
