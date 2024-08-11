@@ -1,25 +1,18 @@
 
 import { Button } from "@/components/ui/button"
-import { Metadata } from "next"
-import Image from "next/image"
+
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import { Separator } from "@/components/ui/separator"
 import { RxPlusCircled } from "react-icons/rx";
-import Sidebar from "@/components/sidebar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 import AlbumsList from "@/components/albumsList";
 import { PodcastEmptyPlaceholder } from "@/components/podcast-empty-placeholder"
-import { Music } from "lucide-react"
 import MusicList from "@/components/musiclist"
-
-
-
 
 
 export default function Home() {
 // to get soptify data
-
 
   return (
     <>
